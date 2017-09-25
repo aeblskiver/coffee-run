@@ -1,10 +1,13 @@
 //Tests for the datastore
 
-var ds = new DataStore();
-ds.add('m@bond.com', 'tea');
-ds.add('james@bond.com', 'eshpressho');
-ds.getAll();
-ds.remove('james@bond.com');
-ds.getAll();
-ds.get('m@bond.com');
-ds.get('james@bond.com');
+(function() {
+    console.log("Testing DataStore");
+    var ds = new DataStore();
+    console.log(ds.add('m@bond.com', 'tea'));
+    console.log(ds.add('james@bond.com', 'eshpressho'));
+    console.log(ds.getAll());
+    console.log(ds.remove('james@bond.com'));
+    console.log(ds.getAll());
+    console.log(ds.get('m@bond.com'));
+    console.log(ds.get('james@bond.com'));
+  })();
