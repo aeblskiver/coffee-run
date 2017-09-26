@@ -1,7 +1,9 @@
 //Tests for the truck
+/*global DataStore:true*/
+/*global Truck:true*/
 
 (function() {
-  console.log("Testing Truck");
+  console.log('Testing Truck');
   var myTruck = new Truck('ncc-1701', new DataStore());
   console.log(myTruck.createOrder({
     emailAddress: 'me@goldfinger.com',
