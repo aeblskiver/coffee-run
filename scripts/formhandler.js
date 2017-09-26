@@ -2,7 +2,6 @@
   'use strict';
   var App = window.App || {};
   var $ = window.jQuery;
-  var RANGE_SELECTOR = '[data-coffee-range="range"]';
   var OUTPUT_SELECTOR = '[data-coffee-output="text"]';
 
   function FormHandler(selector) {
@@ -40,7 +39,7 @@
 
   FormHandler.prototype.addRangeHandler = function(fn) {
     console.log('Setting range handler');
-    let caffeineValue = 0;
+    var caffeineValue = 0;
     this.$formElement.on('input', function(event) {
       event.preventDefault();
       caffeineValue = this.value;
@@ -51,18 +50,18 @@
 
   FormHandler.prototype.changeRating = function(value) {
     var output = document.querySelector(OUTPUT_SELECTOR);
-    let caffeine = "";
+    var caffeine = '';
     if (value < 33) {
-      caffeine = "low-caffeine";
+      caffeine = 'low-caffeine';
     }
     else if (value > 80) {
-      caffeine = "high-caffeine";
+      caffeine = 'high-caffeine';
     } else {
-      caffeine = "med-caffeine";
+      caffeine = 'med-caffeine';
     }
     output.classList.remove('low-caffeine', 'med-caffeine', 'high-caffeine');
     output.classList.add(caffeine);
-  }
+  };
 
   App.FormHandler = FormHandler;
   window.App = App;
